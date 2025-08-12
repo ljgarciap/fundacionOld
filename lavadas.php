@@ -1,0 +1,109 @@
+<?php
+session_start();
+if($_SESSION["ok"]==true && $_SESSION["sadmin"]==true){
+
+$usuariosess=$_SESSION["user"];
+$nombresess=$_SESSION["name"];
+$apellidosess=$_SESSION["apellido"];
+	
+include_once('bas/conn.php');
+include("menusadmin.html");
+
+$hoy = date("y-m-d"); 
+?>
+<div id="preloader">
+<br><br><br><br>
+<center><img src="images/loader.gif" width="40%"/></center>
+    <div id="loader">&nbsp;</div>
+</div>
+
+<div class="container">
+<div class="jumbotron">
+
+<div class="table-responsive">
+<table id="tabla" class="display" cellspacing="0" width="100%">
+
+<thead>
+    <tr>
+<th>Dia</th>
+<th>Residente</th>
+<th>Valor pendiente</th>
+<th>Fecha abono</th>
+<th>Valor abono</th>
+<th>Saldo</th>
+<th>Fundacion</th>
+<th>Abonar</th>
+    </tr>
+</thead>
+<tfoot>
+    <tr>
+<th>Dia</th>
+<th>Residente</th>
+<th>Valor pendiente</th>
+<th>Fecha abono</th>
+<th>Valor abono</th>
+<th>Saldo</th>
+<th>Fundacion</th>
+<th>Abonar</th>
+    </tr>
+</tfoot>			
+
+<tbody>
+
+<?php
+mysqli_set_charset($con,"utf8");
+	
+$result1=mysqli_query($con,"select idcobroslavada,diacobro,valorinicial,fechaabono,abono,nuevosaldo,nomfund,nombresr,apellidosr from cobroslavada 
+join residentes on cobroslavada.idresidentes=residentes.idresidentes where residentes.estado='A';");
+
+while ($resultx = mysqli_fetch_array($result1)) {
+$idcobroslavada=$resultx['idcobroslavada'];
+$diacobro=$resultx['diacobro'];
+$valorinicial=$resultx['valorinicial'];
+$fechaabono=$resultx['fechaabono'];
+$abono=$resultx['abono'];
+$nuevosaldo=$resultx['nuevosaldo'];
+$fundacion=$resultx['nomfund'];
+$nomr=$resultx['nombresr'];
+$apelr=$resultx['apellidosr'];
+$idresidentes="$nomr"." "."$apelr";
+?>
+<tr>
+<form id="pago" action = "pagolavadas.php" method = "post">
+<td><?php echo "$diacobro"; ?></td>
+<td><?php echo "$idresidentes"; ?></td>
+<td><?php echo "$valorinicial"; ?></td>
+<td><?php echo "$fechaabono"; ?></td>
+<td><input type="number" id="abono" name="abono" value='<?php echo "$abono"; ?>'></input></td>
+<td><?php echo "$nuevosaldo"; ?></td>
+<td><?php echo "$fundacion"; ?></td>
+<input type="hidden" id="idcobro" name="idcobro" value="<?php echo $idcobroslavada; ?>"/>
+<input type="hidden" id="valorinicial" name="valorinicial" value="<?php echo $valorinicial; ?>"/>
+<td><button type="submit" class="btn btn-danger">Pago</button> </td>
+</form>
+</tr>
+<?php
+}
+?>
+
+</tbody>
+
+</table>
+</div>
+
+<script type="text/javascript">
+$(window).load(function() {
+	$('#preloader').fadeOut('slow');
+	$('body').css({'overflow':'visible'});
+})
+</script>
+
+</div>
+</div>
+<?php
+include("footersadmin.html");
+}
+else {
+header("Location:index.php");
+}
+?>

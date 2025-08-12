@@ -1,0 +1,270 @@
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="description" content="Fundación Jesús es mi roca"/>
+		<meta name="keywords" content="Fundación Jesús es mi roca"/>
+		<meta name="author" content="Softclass"/>
+		<link rel="shortcut icon" href="images/favicon.ico">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- 
+      <script src="js/jquery-2.1.1.js"></script>
+      <link rel="stylesheet" href="bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="bootstrap/3.3.7/js/bootstrap.min.js"></script>
+--> 		
+	    <script src="js/jquery.dataTables.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+		<script src="js/jquery.ui.autocomplete.scroll.min.js"></script>			
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/jquery-ui.css" rel="stylesheet">
+		<link href="css/jquery.dataTables.css" rel="stylesheet">		
+
+		
+  <script type="text/javascript">
+$(function() {
+            $("#cedr").autocomplete({
+			maxShowItems: 5,
+                source: "residentes.php",
+                minLength: 1,
+                select: function(event, ui) {
+					event.preventDefault();
+                    $('#idr').val(ui.item.idr);
+                    $('#tipor').val(ui.item.tipor);					
+                    $('#cedr').val(ui.item.cedr);
+					$('#nomr').val(ui.item.nomr);
+					$('#apelr').val(ui.item.apelr);					
+					$('#correo').val(ui.item.correo);
+					$('#estr').val(ui.item.estr);
+					$('#eps').val(ui.item.eps);
+					$('#nomfund').val(ui.item.nomfund);
+					$('#idas').val(ui.item.idas);					
+					$('#parent').val(ui.item.parent);
+					$('#nomu').val(ui.item.nomu);
+					$('#apelu').val(ui.item.apelu);					
+					$('#telefono').val(ui.item.telefono);
+					$('#email').val(ui.item.email);					
+			     }
+            });
+		});
+</script>		<!-- boots -->	
+
+<script>
+ $(document).ready( function () {
+     $('#tabla').DataTable({
+      "language":{
+       "lengthMenu":"Mostrar _MENU_ registros por página.",
+       "zeroRecords": "Lo sentimos. No se encontraron registros.",
+             "info": "Mostrando página _PAGE_ de _PAGES_",
+             "infoEmpty": "No hay registros aún.",
+             "infoFiltered": "(filtrados de un total de _MAX_ registros)",
+             "search" : "Búsqueda",
+             "LoadingRecords": "Cargando ...",
+             "Processing": "Procesando...",
+             "SearchPlaceholder": "Comience a teclear...",
+             "paginate": {
+     "previous": "Anterior",
+     "next": "Siguiente", 
+     }
+      }
+     });
+ } );
+</script>	
+
+<title>Jesús es mi roca</title>
+	</head>
+<style>
+html,body
+{
+    background-color:#941524;
+	padding: 0 0 40px;
+    margin: 0;
+}
+/*----------------------------------------------------------*/
+.footer
+{
+    width: 100%;
+    bottom: 0;
+    position:fixed;
+    height: 40px;
+	background-color:#9e8d6f;
+	color:white;
+}
+.footer p{
+	color:white;
+	padding: 10px;
+}
+.footer img{
+	width:2%;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 7px;
+  width: auto;
+}
+.navbar-inverse{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.navbar-inverse .nav li a{
+  color: white;
+}
+.navbar-inverse .nav li a:hover{
+  color: white;
+  -moz-box-shadow: 0px 0px 30px #ffffff; 
+  -webkit-box-shadow: 0px 0px 30px #ffffff; 
+  box-shadow: 0px 0px 30px #ffffff;
+}
+.dropdown-menu{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.dropdown-menu li a:hover{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus{
+    background-color: #ac0b1a !important;
+}
+.container{
+	margin:70px 0px 0px 0px;
+	width:100%;
+}
+</style>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>     
+     </button>
+      <a class="navbar-brand" href="yuly.php" target="blank"><img src="images/logob.png" alt="fundacion"></a>
+    </div>
+	<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="superadmin.php">Inicio</a></li>
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Residentes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="listado.php"><span class="glyphicon glyphicon-plus"></span> Listado general</a></li>
+          <li><a href="listadoi.php"><span class="glyphicon glyphicon-minus"></span> Listado inactivos</a></li>
+          <li><a href="imprimirlas.php" target="blank"><span class="glyphicon glyphicon-minus"></span> Imprimir Listado activos</a></li>	
+          <li><a href="imprimirla.php" target="blank"><span class="glyphicon glyphicon-minus"></span> Imprimir Listado codigos</a></li>	
+          <li><a href="codigo.php" target="blank"><span class="glyphicon glyphicon-minus"></span> Generar códigos nuevos</a></li>	
+          <li><a href="historial.php"><span class="glyphicon glyphicon-minus"></span> Historial general</a></li>		  
+	  </ul>
+      </li>
+	  
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Practicantes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+		      <li><a href="crearuser.php" target="blank"><span class="glyphicon glyphicon-plus"></span> Crear nuevo usuario</a></li>
+          <li><a href="listarpr.php" target="blank"><span class="glyphicon glyphicon-minus"></span> Listar practicantes</a></li>				  
+          <li><a href="almuerzo.php" target="blank"><span class="glyphicon glyphicon-plus"></span> Facturar almuerzo</a></li>
+          <li><a href="almuerzos.php" target="blank"><span class="glyphicon glyphicon-minus"></span> Listar almuerzos</a></li>
+          <li><a href="listahistoriasa.php"><span class="glyphicon glyphicon-plus"></span> Resumen Historias activos</a></li>
+          <li><a href="listahistoriasia.php"><span class="glyphicon glyphicon-plus"></span> Resumen Historias inactivos</a></li>
+	       </ul>
+    </li>	  
+	  
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Identificaciones
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="firma.php" target="blank"><span class="glyphicon glyphicon-plus"></span> Subir firma</a></li>
+          <li><a href="huella.php" target="blank"><span class="glyphicon glyphicon-minus"></span> Subir huella</a></li>
+          <li><a href="cedula.php" target="blank"><span class="glyphicon glyphicon-plus"></span> Subir cédula</a></li>
+          <li><a href="icedula.php" target="blank"><span class="glyphicon glyphicon-minus"></span> Imprimir cédula</a></li>
+			<li><a href="carnets/index.php" target="blank"><span class="glyphicon glyphicon-plus"></span> Imprimir carnets</a></li>
+        </ul>
+      </li>
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Permisos
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="minuta.php" target="blank"><span class="glyphicon glyphicon-plus"></span> Crear minuta</a></li>
+          <li><a href="permisos.php" target="blank"><span class="glyphicon glyphicon-minus"></span> Ver solicitudes</a></li>
+          <li><a href="lhistorialp.php"><span class="glyphicon glyphicon-minus"></span> Historial de salidas</a></li>		  
+          <li><a href="familia.php"><span class="glyphicon glyphicon-minus"></span> Mensajes a familias</a></li>
+        </ul>
+      </li>	
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Terapias
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="terapps.php"><span class="glyphicon glyphicon-plus"></span> Agendar</a></li>
+          <li><a href="terappsi.php"><span class="glyphicon glyphicon-minus"></span> Resumen agenda psicólogo</a></li>
+          <li><a href="terapes.php"><span class="glyphicon glyphicon-minus"></span> Resumen agenda practicantes</a></li>	
+          <li><a href="lider.php"><span class="glyphicon glyphicon-minus"></span> Terapia líder</a></li>
+          <li><a href="sugerir.php"><span class="glyphicon glyphicon-minus"></span> Sugerencias</a></li>
+          <li><a href="resplanta.php"><span class="glyphicon glyphicon-minus"></span> Resumen planta</a></li>		  
+        </ul>
+      </li>		  
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reportes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="reingresos.php"><span class="glyphicon glyphicon-plus"></span> Reporte de reingresos</a></li>
+          <li><a href="minutas.php"><span class="glyphicon glyphicon-minus"></span> Reporte de minutas</a></li>	
+          <li><a href="repsico.php"><span class="glyphicon glyphicon-minus"></span> Reporte psicólogo</a></li>	
+          <li><a href="respi.php"><span class="glyphicon glyphicon-minus"></span> Reporte practicantes</a></li>	
+          <li><a href="rconf.php"><span class="glyphicon glyphicon-minus"></span> Reporte confrontación</a></li>
+          <li><a href="rsug.php"><span class="glyphicon glyphicon-minus"></span> Reporte sugerencias</a></li>		  
+        </ul>
+      </li>	  
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Seguimiento pagos
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="ahorro.php"><span class="glyphicon glyphicon-plus"></span> Ahorro movimiento</a></li>
+          <li><a href="ahorroresumen.php"><span class="glyphicon glyphicon-minus"></span> Resumen ahorro</a></li>
+		  <li><a href="uniformes.php"><span class="glyphicon glyphicon-minus"></span> Uniformes</a></li>
+          <li><a href="pensiones.php"><span class="glyphicon glyphicon-minus"></span> Seguimiento pension</a></li>
+		  <li><a href="pensionesi.php"><span class="glyphicon glyphicon-minus"></span> Seguimiento pension inactivos</a></li>
+		  <li><a href="presupuesto.php"><span class="glyphicon glyphicon-minus"></span> Seguimiento presupuestos</a></li>    
+		<li><a href="diezmo.php"><span class="glyphicon glyphicon-plus"></span> Calcular diezmo</a></li>
+		  <li><a href="conteo.php"><span class="glyphicon glyphicon-minus"></span> Seguimiento diezmos</a></li>		  
+        </ul>		
+      </li>
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contabilidad
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="insertar.php"><span class="glyphicon glyphicon-plus"></span> Nuevo movimiento</a></li>
+          <li><a href="resumenf.php"><span class="glyphicon glyphicon-minus"></span> Resumen Jesus es mi roca</a></li>
+		  <li><a href="resumenj.php"><span class="glyphicon glyphicon-minus"></span> Resumen Jorec</a></li>	
+		  <li><a href="resumeny.php"><span class="glyphicon glyphicon-minus"></span> Resumen Yuly</a></li>
+		  <li><a href="resumenast.php"><span class="glyphicon glyphicon-minus"></span> Resumen asteriscos</a></li>
+		  <li><a href="crearconcepto.php"><span class="glyphicon glyphicon-plus"></span> Nuevo concepto</a></li>		  
+        </ul>
+      </li>		  
+     </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	  <span class="glyphicon glyphicon-user"></span><?php echo $nombresess; ?></a>
+	   <ul class="dropdown-menu">
+          <li><a data-toggle="modal" href="#myModal"><span class="glyphicon glyphicon-pencil"></span> Cambiar contraseña</a></li>
+          <li><a href="bas/close.php"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión</a></li>		  
+        </ul>
+	 </li>
+    </ul>
+	
+</div>	
+  </div>
+</nav>

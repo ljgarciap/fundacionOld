@@ -1,0 +1,183 @@
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta name="description" content="Fundación Jesús es mi roca"/>
+		<meta name="keywords" content="Fundación Jesús es mi roca"/>
+		<meta name="author" content="Softclass"/>
+		<link rel="shortcut icon" href="images/favicon.ico">
+	    <script src="js/jquery-2.1.1.js"></script>
+		<script src="js/bootstrap.min.js"></script>			
+	    <script src="js/jquery.dataTables.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+		<script src="js/jquery.ui.autocomplete.scroll.min.js"></script>			
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/jquery-ui.css" rel="stylesheet">
+		<link href="css/jquery.dataTables.css" rel="stylesheet">
+
+		
+  <script type="text/javascript">
+$(function() {
+            $("#cedr").autocomplete({
+			maxShowItems: 5,
+                source: "residentes.php",
+                minLength: 1,
+                select: function(event, ui) {
+					event.preventDefault();
+                    $('#idr').val(ui.item.idr);
+                    $('#tipor').val(ui.item.tipor);					
+                    $('#cedr').val(ui.item.cedr);
+					$('#nomr').val(ui.item.nomr);
+					$('#apelr').val(ui.item.apelr);					
+					$('#correo').val(ui.item.correo);
+					$('#estr').val(ui.item.estr);
+					$('#eps').val(ui.item.eps);
+					$('#nomfund').val(ui.item.nomfund);
+					$('#idas').val(ui.item.idas);					
+					$('#parent').val(ui.item.parent);
+					$('#nomu').val(ui.item.nomu);
+					$('#apelu').val(ui.item.apelu);					
+					$('#telefono').val(ui.item.telefono);
+					$('#email').val(ui.item.email);					
+			     }
+            });
+		});
+</script>		<!-- boots -->	
+
+<script>
+ $(document).ready( function () {
+     $('#tabla').DataTable({
+      "language":{
+       "lengthMenu":"Mostrar _MENU_ registros por página.",
+       "zeroRecords": "Lo sentimos. No se encontraron registros.",
+             "info": "Mostrando página _PAGE_ de _PAGES_",
+             "infoEmpty": "No hay registros aún.",
+             "infoFiltered": "(filtrados de un total de _MAX_ registros)",
+             "search" : "Búsqueda",
+             "LoadingRecords": "Cargando ...",
+             "Processing": "Procesando...",
+             "SearchPlaceholder": "Comience a teclear...",
+             "paginate": {
+     "previous": "Anterior",
+     "next": "Siguiente", 
+     }
+      }
+     });
+ } );
+</script>	
+
+<title>Jesús es mi roca</title>
+	</head>
+<style>
+html,body
+{
+    background-color:#941524;
+	padding: 0 0 40px;
+    margin: 0;
+}
+/*----------------------------------------------------------*/
+.footer
+{
+    width: 100%;
+    bottom: 0;
+    position:fixed;
+    height: 40px;
+	background-color:#9e8d6f;
+	color:white;
+}
+.footer p{
+	color:white;
+	padding: 10px;
+}
+.footer img{
+	width:2%;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 7px;
+  width: auto;
+}
+.navbar-inverse{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.navbar-inverse .nav li a{
+  color: white;
+}
+.navbar-inverse .nav li a:hover{
+  color: white;
+  -moz-box-shadow: 0px 0px 30px #ffffff; 
+  -webkit-box-shadow: 0px 0px 30px #ffffff; 
+  box-shadow: 0px 0px 30px #ffffff;
+}
+.dropdown-menu{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.dropdown-menu li a:hover{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus{
+    background-color: #ac0b1a !important;
+}
+.container{
+	margin:70px 0px 0px 0px;
+	width:100%;
+}
+</style>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>     
+     </button>
+      <a class="navbar-brand" href="" target="blank"><img src="images/logob.png" alt="fundacion"></a>
+    </div>
+	<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="terapeuta.php">Inicio</a></li>
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reportes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="reportg.php"><span class="glyphicon glyphicon-minus"></span> Resumen reportes</a></li>	  
+        </ul>
+      </li>	
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sugerencias
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="sugerg.php"><span class="glyphicon glyphicon-plus"></span> Sugerir acción</a></li>
+          <li><a href="resugerg.php"><span class="glyphicon glyphicon-minus"></span> Ver sugeridos</a></li>		  
+        </ul>
+      </li>		  
+     </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	  <span class="glyphicon glyphicon-user"></span><?php echo $nombresess; ?></a>
+	   <ul class="dropdown-menu">
+          <li><a data-toggle="modal" href="#myModal"><span class="glyphicon glyphicon-pencil"></span> Cambiar contraseña</a></li>
+          <li><a href="bas/close.php"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión</a></li>		  
+        </ul>
+	 </li>
+    </ul>
+	
+</div>	
+  </div>
+</nav>

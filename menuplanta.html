@@ -1,0 +1,189 @@
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="description" content="Fundación Jesús es mi roca"/>
+		<meta name="keywords" content="Fundación Jesús es mi roca"/>
+		<meta name="author" content="Softclass"/>
+		<link rel="shortcut icon" href="images/favicon.ico">
+	    <script src="js/jquery-2.2.4.js"></script>
+		<script src="js/bootstrap.js" type="application/javascript"></script>	
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery.dataTables.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+		<script src="js/jquery.ui.autocomplete.scroll.min.js"></script>	
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/jquery-ui.css" rel="stylesheet">
+		<link href="css/jquery.dataTables.css" rel="stylesheet">
+		
+<script>
+ $(document).ready( function () {
+     $('#tabla').DataTable({
+      "language":{
+       "lengthMenu":"Mostrar _MENU_ registros por página.",
+       "zeroRecords": "Lo sentimos. No se encontraron registros.",
+             "info": "Mostrando página _PAGE_ de _PAGES_",
+             "infoEmpty": "No hay registros aún.",
+             "infoFiltered": "(filtrados de un total de _MAX_ registros)",
+             "search" : "Búsqueda",
+             "LoadingRecords": "Cargando ...",
+             "Processing": "Procesando...",
+             "SearchPlaceholder": "Comience a teclear...",
+             "paginate": {
+     "previous": "Anterior",
+     "next": "Siguiente", 
+     }
+      }
+     });
+ } );
+</script>	
+
+<title>Jesús es mi roca</title>
+	</head>
+<style>
+html,body
+{
+    background-color:#941524;
+	padding: 0 0 40px;
+    margin: 0;
+}
+/*----------------------------------------------------------*/
+.footer
+{
+    width: 100%;
+    bottom: 0;
+    position:fixed;
+    height: 40px;
+	background-color:#9e8d6f;
+	color:white;
+}
+.footer p{
+	color:white;
+	padding: 10px;
+}
+.footer img{
+	width:2%;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 7px;
+  width: auto;
+}
+.navbar-inverse{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.navbar-inverse .nav li a{
+  color: white;
+}
+.navbar-inverse .nav li a:hover{
+  color: white;
+  -moz-box-shadow: 0px 0px 30px #ffffff; 
+  -webkit-box-shadow: 0px 0px 30px #ffffff; 
+  box-shadow: 0px 0px 30px #ffffff;
+}
+.dropdown-menu{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.dropdown-menu li a:hover{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus{
+    background-color: #ac0b1a !important;
+}
+.container{
+	margin:70px 0px 0px 0px;
+	width:100%;
+}
+</style>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>     
+     </button>
+      <a class="navbar-brand" href="" target="blank"><img src="images/logob.png" alt="fundacion"></a>
+    </div>
+	<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="planta.php">Inicio</a></li>
+
+		<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Listado
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="listadoa.php"><span class="glyphicon glyphicon-plus"></span> Listado general</a></li>
+          <li><a href="listadoia.php"><span class="glyphicon glyphicon-minus"></span> Listado inactivos</a></li>
+        </ul>
+      </li>	  
+	  
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Documentación
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+		  <li><a href="historia.php"><span class="glyphicon glyphicon-plus"></span> Abrir historia</a></li> 
+          <li><a href="consentadolb.php" target="blank"><span class="glyphicon glyphicon-plus"></span> Consentimiento adolescente en blanco</a></li> 
+          <li><a href="adolescente.php"><span class="glyphicon glyphicon-plus"></span> Consentimiento adolescente digital</a></li>  
+          <li><a href="consentadulb.php" target="blank"><span class="glyphicon glyphicon-plus"></span> Consentimiento adulto en blanco</a></li> 
+          <li><a href="adulto.php"><span class="glyphicon glyphicon-plus"></span> Consentimiento adulto digital</a></li>   
+		</ul>
+      </li>	
+
+
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reportes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+		  <li><a href="familiares.php"><span class="glyphicon glyphicon-plus"></span> A familiares</a></li> 
+          <li><a href="psicoreportes.php"><span class="glyphicon glyphicon-plus"></span> Resumen reportes psicólogo</a></li>  
+          <li><a href="listahistorias.php"><span class="glyphicon glyphicon-plus"></span> Resumen Historias</a></li>
+          <li><a href="historialpl.php"><span class="glyphicon glyphicon-minus"></span> Historial general</a></li>	  		  
+        </ul>
+      </li>	 
+
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Agenda
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="agendp.php"><span class="glyphicon glyphicon-plus"></span> Ver agenda</a></li>
+          <li><a href="historiaamp.php"><span class="glyphicon glyphicon-plus"></span> Ampliar historia</a></li>  
+        </ul>
+      </li>	
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sugerencias
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="sugerp.php"><span class="glyphicon glyphicon-plus"></span> Sugerir acción</a></li>
+          <li><a href="resugerp.php"><span class="glyphicon glyphicon-minus"></span> Ver sugeridos</a></li>		  
+        </ul>
+      </li>	
+
+     </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	  <span class="glyphicon glyphicon-user"></span><?php echo $nombresess; ?></a>
+	   <ul class="dropdown-menu">
+          <li><a data-toggle="modal" href="#myModal"><span class="glyphicon glyphicon-pencil"></span> Cambiar contraseña</a></li>
+          <li><a href="bas/close.php"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión</a></li>		  
+        </ul>
+	 </li>
+    </ul>
+	
+</div>	
+  </div>
+</nav>
