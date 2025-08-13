@@ -228,25 +228,52 @@ $pdf->Cell(0,15,utf8_decode('AUTORIZACIÓN PARA LA PUBLICACIÓN DE'));
 $pdf->Ln(10);
 $pdf->Cell(35);
 $pdf->Cell(0,15,utf8_decode('IMÁGENES Y VIDEOS DE LOS RESIDENTES'));
-$pdf->Ln(20);
+$pdf->Ln(10);
 $pdf->Cell(50);
 $pdf->Cell(0,15,utf8_decode('FUNDACIÓN JESÚS ES MI ROCA'));
 $pdf->Ln(20);
 $pdf->SetFont('Arial','',12);
-$html2 = 'Con la inclusión de las nuevas tecnologías dentro de los medios didácticos al alcance de la comunidad y la posibilidad de que en estos puedan aparecer imágenes y/o videos de sus hijos, durante la realización de actividades organizadas por la Fundación, y dado que el derecho a la propia imagen está reconocido en la Constitución y la regulación por la ley sobre el derecho al honor, a la identidad personal, familiar y a la propia. 
+$html2 = 'La FUNDACIÓN JESÚS ES MI ROCA, en el desarrollo de sus actividades terapéuticas, educativas, culturales, espirituales y recreativas, genera registros fotográficos y audiovisuales con fines institucionales. Estas imágenes pueden ser utilizadas para mostrar el avance de los procesos de rehabilitación, fortalecer el vínculo con las familias, promover los servicios ofrecidos por la Fundación y visibilizar su labor ante entidades públicas o privadas aliadas. 
 
-La Junta Directiva de la FUNDACIÓN JESÚS ES MI ROCA pide a los padres y/o acudientes legales para poder publicar (o negar su publicación), las imágenes en las cuales aparezcan individualmente o en grupo en el desarrollo de su tratamiento y que se puedan realizar a los jóvenes por parte de la Fundación en las diferentes actividades realizadas en la Institución y fuera de la misma.';
+El uso de la imagen está regulado por el derecho fundamental al buen nombre, la intimidad y la protección de datos personales, conforme a la Constitución Política de Colombia, la Ley 1581 de 2012 y demás normas complementarias. Por ello, la Fundación solicita autorización formal para publicar o abstenerse de publicar dichas imágenes, respetando siempre la dignidad de los residentes.';
 $pdf->Write(5,utf8_decode($html2),'');
 $pdf->Ln(10);
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(65);
+$pdf->Cell(0,15,utf8_decode('AUTORIZACIÓN:'));
+$pdf->Ln(12);
 $pdf->SetFont('Arial','',11);
-$pdf->Cell(110,10,utf8_decode('-------------------------------------------------------------------------------------------------------------------------------------------------------------------------'));
-$pdf->Ln(10);
-$html3="Yo, $nombreu $apellidou con CC: $docu de $expedidou Padre o Acudiente del Residente $nombrer $apellidosr de la FUNDACIÓN JESÚS ES MI ROCA.";
+$html3="Yo, $nombreu $apellidou identificad(o/a) con Cédula de Ciudadanía: $docu de $expedidou en calidad de padre/acudiente legal del Residente $nombrer $apellidosr, autorizo de manera previa, expresa, voluntaria, informada e inequívoca a la FUNDACIÓN JESÚS ES MI ROCA, para el uso de su imagen y voz, captadas mediante fotografías y/o videos, tomadas durante las actividades terapéuticas, educativas, lúdicas, espirituales o institucionales que se realicen dentro o fuera de las instalaciones de la Fundación.";
 $pdf->Write(5,utf8_decode($html3),'');
 $pdf->Ln(10);
-$html4="$autorizacion doy mi consentimiento para que mi hijo aparezca en las fotografías y/o videos que se publiquen en la página Web, y redes sociales como: Facebook, whatsapp e Instagram de la FUNDACIÓN JESÚS ES MI ROCA de forma individual o de grupo, durante la realización de actividades.";
+$html4="Esta autorización se otorga exclusivamente para los siguientes fines:";
 $pdf->Write(5,utf8_decode($html4),'');
 $pdf->Ln(10);
+$html6="- Difusión institucional a través de la página web oficial de la Fundación.
+- Publicaciones en redes sociales institucionales (Facebook, Instagram, WhatsApp).
+- Material didáctico, promocional, informativo o documental relacionado con el proceso terapéutico.
+- Presentaciones de informe de resultados a entidades públicas o privadas.";
+$pdf->Write(5,utf8_decode($html6),'');
+$pdf->Ln(10);
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(45);
+$pdf->Cell(0,15,utf8_decode('CONSIDERACIONES LEGALES'));
+$pdf->Ln(12);
+$pdf->SetFont('Arial','',11);
+$html7="- Esta autorización no concede derechos comerciales, y la Fundación se compromete a proteger el buen nombre, la dignidad y la integridad del residente.
+- En cumplimiento del artículo 15 de la Constitución Política de Colombia, la Ley 1581 de 2012 y el Decreto 1377 de 2013, esta autorización podrá ser revocada en cualquier momento mediante solicitud escrita presentada ante la Fundación.
+- La imagen será utilizada únicamente en el marco de las finalidades señaladas, y no se transferirá a terceros sin consentimiento adicional.
+- La Fundación se abstendrá de publicar imágenes que puedan vulnerar la dignidad, intimidad o seguridad del residente.";
+$pdf->Write(5,utf8_decode($html7),'');
+$pdf->Ln(10);
+
+$pdf->AddPage('P','Letter');
+$pdf->SetFont('Arial','B',16);
+$pdf->Ln(20);
+$html8="DECLARO QUE HE LEÍDO, COMPRENDIDO Y ACEPTADO PLENAMENTE EL CONTENIDO DE ESTE DOCUMENTO.";
+$pdf->Write(5,utf8_decode($html8),'');
+$pdf->Ln(12);
+$pdf->SetFont('Arial','',11);
 $html5="Lugar y fecha: Mesa de los santos, $fechaih.";
 $pdf->Write(5,utf8_decode($html5),'');
 $pdf->Ln(40);
@@ -305,18 +332,46 @@ $pdf->Cell(58);
 $pdf->Cell(0,15,utf8_decode('DE DATOS PERSONALES'));
 $pdf->Ln(20);
 $pdf->SetFont('Arial','',11);
-$html6="Yo $nombreu $apellidou, identificado(a) con la cédula de ciudadanía No. $docu expedida en $expedidou, manifiesto por medio de este documento que he recibido de la FUNDACIÓN JESÚS ES MI ROCA la información acerca del uso de mis datos personales, los cuales serán utilizados dentro del objeto social de la FUNDACIÓN JESÚS ES MI ROCA para los fines pertinentes por los cuales fue tomada la correspondiente información, así mismo manifiesto que me fue informado que mis datos personales serán usados por la FUNDACIÓN JESÚS ES MI ROCA, única y exclusivamente para mantenerme informado(a) sobre actividades institucionales, realizar promoción de servicios y eventos de la Institución, para el cumplimiento de obligaciones contractuales; por consiguiente manifiesto que otorgo autorización PREVIA, EXPLICITA, INEQUÍVOCA e INFORMADA a la FUNDACIÓN JESÚS ES MI ROCA, para el uso de mis datos personales, para los fines descritos anteriormente los cuales a partir del momento de la firma de la presente autorización, hará parte de la base de datos de la FUNDACIÓN JESÚS ES MI ROCA que tiene de sus residentes y demás personas relacionadas con la Institución.
-
-Así mismo, declaro que me fueron informados los derechos que como titular de la información puedo ejercer, tales como:
-
-1.	Conocer, actualizar y rectificar mis datos personales.
-2.	Recibir información acerca del uso que la FUNDACIÓN JESÚS ES MI ROCA le da a mis datos personales.
-3.	Solicitar una relación detallada acerca de mis datos personales registrados en la base de datos de la Institución.
-4.	Autorizar a la FUNDACIÓN JESÚS ES MI ROCA a suministrar mis datos personales únicamente a aquellas personas o empresas que la Ley o el suscrito determinen.
-
-La presente autorización se suscribe en Piedecuesta, a $fechaih.";
+$html9="La FUNDACIÓN JESÚS ES MI ROCA, en cumplimiento de lo dispuesto en la Ley 1581 de 2012, el Decreto 1377 de 2013 y demás normas que regulan la protección de datos personales en Colombia, informa a todos los acudientes, residentes, empleados, proveedores y demás personas naturales relacionadas con su quehacer institucional, que los datos personales suministrados serán recolectados, almacenados, usados y tratados conforme a los principios de legalidad, finalidad, libertad, veracidad, seguridad, confidencialidad y transparencia. Esta autorización busca garantizar el respeto por el derecho fundamental al habeas data, establecido en el artículo 15 de la Constitución Política de Colombia, y asegurar que el tratamiento de la información personal se realice de manera responsable, segura y conforme a las finalidades legítimas del objeto social de la Fundación.";
+$pdf->Write(5,utf8_decode($html9),'');
+$pdf->Ln(10);
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(65);
+$pdf->Cell(0,15,utf8_decode('AUTORIZACIÓN:'));
+$pdf->Ln(12);
+$pdf->SetFont('Arial','',11);
+$html6="Yo $nombreu $apellidou, identificado(a) con la cédula de ciudadanía No. $docu expedida en $expedidou, en mi calidad de acudiente del residente vinculado a la FUNDACIÓN JESÚS ES MI ROCA, manifiesto que he sido informado(a), de manera clara, suficiente y comprensible, sobre la política de tratamiento de datos personales adoptada por la Fundación.
+Autorizo de forma previa, expresa, informada, voluntaria e inequívoca a la FUNDACIÓN JESÚS ES MI ROCA, para que recolecte, almacene, administre, consulte, use, procese, actualice, suprima o circule mis datos personales y los del residente a mi cargo, única y exclusivamente para los fines relacionados con el desarrollo de su objeto social, dentro de los cuales se incluyen:
+- La gestión administrativa, médica y terapéutica del proceso de rehabilitación.
+- La organización de eventos institucionales, espirituales y/o formativos.
+- La emisión de informes requeridos por entidades gubernamentales, de salud o educativas.
+- La promoción de actividades, programas o servicios relacionados con la Fundación.
+- La conservación de registros administrativos, estadísticos y contractuales.
+- La comunicación con familiares o acudientes respecto al proceso del residente.
+- Los datos personales serán incorporados a una base de datos custodiada bajo criterios de seguridad, confidencialidad y respeto a los derechos fundamentales, y no serán compartidos con terceros sin mi autorización, salvo obligación legal o requerimiento de autoridad competente.";
 $pdf->Write(5,utf8_decode($html6),'');
-$pdf->Ln(40);
+$pdf->Ln(10);
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(50);
+$pdf->Cell(0,15,utf8_decode('DERECHOS DEL TITULAR:'));
+$pdf->Ln(12);
+$pdf->SetFont('Arial','',11);
+$html10="Declaro que me fueron informados los derechos que me asisten como titular de la información, los cuales podré ejercer en cualquier momento, incluyendo:
+- Conocer, actualizar y rectificar mis datos personales frente a la Fundación.
+- Solicitar prueba de esta autorización en cualquier momento.
+- Ser informado sobre el uso que se le ha dado a mis datos.
+- Presentar consultas o reclamos ante la Fundación y, si no se resuelven, ante la Superintendencia de Industria y Comercio.
+- Revocar la autorización y/o solicitar la supresión de los datos, cuando no exista un deber legal o contractual de mantenerlos.
+- Para ejercer estos derechos, podré comunicarme al correo electrónico: admon@fundacionjesusesmiroca.org o dirigirme directamente a las instalaciones de la Fundación.";
+$pdf->Write(5,utf8_decode($html10),'');
+$pdf->Ln(10);
+
+$pdf->AddPage('P','Letter');
+$pdf->SetFont('Arial','',11);
+$pdf->Ln(20);
+$html11="La presente autorización se suscribe en Piedecuesta, a $fechaih.";
+$pdf->Write(5,utf8_decode($html11),'');
+$pdf->Ln(12);
 //firmas
 $picf = "firmas/$docu.png";
 if(file_exists($picf)){
@@ -350,18 +405,25 @@ $pdf->Cell(58);
 $pdf->Cell(0,15,utf8_decode('DE DATOS PERSONALES'));
 $pdf->Ln(20);
 $pdf->SetFont('Arial','',11);
-$html7="Yo $nombrer $apellidosr, identificado(a) con $tipodr No. $cedular expedida en $expedidor, manifiesto por medio de este documento que he recibido de la FUNDACIÓN JESÚS ES MI ROCA la información acerca del uso de mis datos personales, los cuales serán utilizados dentro del objeto social de la FUNDACIÓN JESÚS ES MI ROCA para los fines pertinentes por los cuales fue tomada la correspondiente información, así mismo manifiesto que me fue informado que mis datos personales serán usados por la FUNDACIÓN JESÚS ES MI ROCA, única y exclusivamente para mantenerme informado(a) sobre actividades institucionales, realizar promoción de servicios y eventos de la Institución, para el cumplimiento de obligaciones contractuales; por consiguiente manifiesto que otorgo autorización PREVIA, EXPLICITA, INEQUÍVOCA e INFORMADA a la FUNDACIÓN JESÚS ES MI ROCA, para el uso de mis datos personales, para los fines descritos anteriormente los cuales a partir del momento de la firma de la presente autorización, hará parte de la base de datos de la FUNDACIÓN JESÚS ES MI ROCA que tiene de sus residentes y demás personas relacionadas con la Institución.
+$html7="Yo $nombrer $apellidosr, identificado(a) con $tipodr No. $cedular expedida en $expedidor, manifiesto que he sido debidamente informado por la FUNDACIÓN JESÚS ES MI ROCA sobre el tratamiento que se dará a mis datos personales, en cumplimiento de lo establecido por la Ley 1581 de 2012, el Decreto 1377 de 2013, y demás normas relacionadas con la protección de la información personal en Colombia.
 
-Así mismo, declaro que me fueron informados los derechos que como titular de la información puedo ejercer, tales como:
+Autorizo de forma previa, expresa, voluntaria, inequívoca e informada a la FUNDACIÓN JESÚS ES MI ROCA, para que recolecte, almacene, administre, consulte, utilice, comparta y procese mis datos personales, única y exclusivamente con el fin de:
 
-1.	Conocer, actualizar y rectificar mis datos personales.
-2.	Recibir información acerca del uso que la FUNDACIÓN JESÚS ES MI ROCA le da a mis datos personales.
-3.	Solicitar una relación detallada acerca de mis datos personales registrados en la base de datos de la Institución.
-4.	Autorizar a la FUNDACIÓN JESÚS ES MI ROCA a suministrar mis datos personales únicamente a aquellas personas o empresas que la Ley o el suscrito determinen.
+- Ejecutar actividades relacionadas con mi proceso terapéutico y de rehabilitación.
+- Cumplir con obligaciones contractuales, legales y administrativas derivadas de mi permanencia en la Fundación.
+- Mantenerme informado sobre actividades institucionales, eventos, reuniones, campañas y otros asuntos relacionados con mi estadía.
+- Elaborar estadísticas, informes y registros internos requeridos para la operación legal y profesional de la Fundación.
+- Responder requerimientos de autoridades competentes cuando así lo exija la ley.
 
-La presente autorización se suscribe en Piedecuesta, a $fechaih.";
+Los datos personales autorizados serán incorporados en la base de datos institucional, bajo custodia segura y con acceso restringido, garantizando su confidencialidad, integridad y uso responsable.
+
+Asimismo, declaro que me fueron explicados mis derechos como titular de la información personal, los cuales podré ejercer en cualquier momento, tales como conocer, actualizar y rectificar mis datos; solicitar información sobre el uso que se les ha dado; requerir prueba de esta autorización; presentar consultas o reclamos ante la Fundación y, en caso de no obtener respuesta satisfactoria, ante la Superintendencia de Industria y Comercio; así como revocar esta autorización o solicitar la supresión de mis datos cuando no exista un deber legal o contractual que lo impida.
+
+Para ejercer estos derechos, podré comunicarme a través del correo electrónico institucional admon@fundacionjesusesmiroca.org o de manera presencial en la sede de la Fundación. 
+
+Declaro que comprendo plenamente el alcance y los fines de esta autorización, y firmo en señal de aceptación. La presente autorización se suscribe en Piedecuesta, a $fechaih.";
 $pdf->Write(5,utf8_decode($html7),'');
-$pdf->Ln(40);
+$pdf->Ln(10);
 //firmas
 $picf2 = "firmas/$cedular.png";
 if(file_exists($picf2)){
@@ -398,25 +460,28 @@ $pdf->Ln(15);
 $pdf->SetFont('Arial','',11);
 $pdf->Cell(196,7,utf8_decode('Nombre del residente: '.$nombrer.' '.$apellidosr),1,1,'C');
 $pdf->Cell(196,7,utf8_decode('Identificación: '.$tipodr.'      Numero: '.$cedular.'      Lugar de Expedición: '.$expedidor),1,1,'C');
-$pdf->Ln(7);
+$pdf->Ln(3);
 $pdf->Cell(40);
 $pdf->Cell(0,5,utf8_decode('1. DECLARACIÓN DE LA FUNDACIÓN JESÚS ES MI ROCA'));
 $pdf->Ln(7);
-$pdf->MultiCell(196,5,utf8_decode('a. No se hace responsable de ningún tipo de perjuicio material, ni daño alguno que ocasione la persona o cosa dentro y/o fuera de la institución.
-b. No tendrá ninguna responsabilidad penal, civil, administrativa, laboral de ninguna naturaleza.'),1);
-$pdf->Ln(7);
+$pdf->MultiCell(196,5,utf8_decode('La FUNDACIÓN JESÚS ES MI ROCA declara que actúa como una entidad privada sin ánimo de lucro dedicada a la atención terapéutica, formativa y espiritual de personas con consumo problemático de sustancias psicoactivas, de conformidad con lo dispuesto en la Ley 1566 de 2012 y demás normativas aplicables.
+La Fundación se compromete a actuar con la debida diligencia y responsabilidad, conforme a los principios del derecho a la salud, la vida digna y el respeto por los derechos humanos. Sin embargo, informa que no podrá asumir responsabilidad por hechos que:
+a. Provengan de actos dolosos, imprudentes o contrarios a la ley, cometidos por el residente dentro o fuera de la institución.
+b. Escapen del control razonable de la Fundación, pese a la adopción de medidas preventivas.
+c. Deriven de condiciones médicas o psiquiátricas preexistentes que no hayan sido informadas al momento del ingreso.'),1);
+$pdf->Ln(2);
 $pdf->Cell(60);
 $pdf->Cell(0,10,utf8_decode('2. DECLARACIÓN DEL RESIDENTE'));
 $pdf->Ln(10);
-$pdf->MultiCell(196,5,utf8_decode('a. Declaro en el presente documento que exonero a la FUNDACIÓN JESÚS ES MI ROCA de responsabilidades penales o civiles.
-b. Que la Institución no se hará responsable de cualquier posible accidente que ocasione en mí un daño permanente o transitorio, ni el deterioro de mi salud por causas naturales.
-c. Que la FUNDACIÓN JESÚS ES MI ROCA no se hará responsable de mis fugas y de lo que posiblemente pueda ocasionarme dicha fuga. 
-d. Que la FUNDACIÓN JESÚS ES MI ROCA no se hará responsable de un posible suicidio dentro o fuera de la institución.  
-e. La FUNDACIÓN JESÚS ES MI ROCA no responderá por jóvenes que por su cuadro clínico presente síntomas de depresión o sufran de esta enfermedad y atenten contra su vida.
-f. La FUNDACIÓN JESÚS ES MI ROCA no responderá por objetos de valor   de jóvenes que se ausenten da la fundación las prendas dejadas tales como ropa útiles de aseo y de más pertenencia la familia tendrá un plazo máximo de ocho días para buscar dichas pertenencias si no lo hace en este lapso de tiempo la fundación no se hará responsable de dichas pertenencias 
-g. La colchoneta que ingresa a la fundación quedará donada a la FUNDACIÓN JESÚS ES MI ROCA.
-h. Acudiente que tome la decisión de retirar al residente Del tratamiento, o se fugue, la Fundación no hará devolución de dineros pagados a la institución. (Numeral 19 Capitulo 12.3 NORMAS INTERNAS DE LOS PADRES DE FAMILIA Del Manual de Convivencia).'),1);
-$pdf->Ln(30);
+$pdf->MultiCell(196,5,utf8_decode('a. Reconozco y acepto que el éxito del tratamiento depende de mi disposición, voluntad, disciplina y permanencia en el proceso.
+b. Exonero de manera parcial a la Fundación de responsabilidad civil o penal por las consecuencias derivadas de actos cometidos por mí, cuando estos escapen de su capacidad de control o vigilancia.
+c. En caso de fuga, abandono voluntario o retiro anticipado del proceso, asumo plena responsabilidad por los riesgos asociados, incluyendo cualquier afectación personal, familiar o legal.
+d. Comprendo que la Fundación no se hace responsable por autolesiones o intentos de suicidio, salvo que haya existido negligencia, omisión o falta de intervención razonable de su parte.
+e. Autorizo que los objetos personales dejados en la Fundación, y no reclamados dentro de los ocho (8) días siguientes a mi egreso o retiro, podrán ser dispuestos libremente por la entidad.
+f. La colchoneta y demás implementos entregados a la Fundación al ingreso serán considerados donados, salvo manifestación contraria por escrito.
+g. En caso de retiro voluntario, fuga o abandono del proceso, renuncio expresamente a la devolución de cualquier suma de dinero pagada, al ser estos recursos destinados desde el momento del ingreso a cubrir costos operativos, terapéuticos y logísticos.
+Esta declaración se realiza bajo los principios de autonomía de la voluntad, según el artículo 1602 del Código Civil Colombiano, y no limita el derecho del residente a interponer acciones en caso de negligencia, omisión grave o vulneración de derechos fundamentales.'),1);
+$pdf->Ln(4);
 //firmas
 $picf = "firmas/$docu.png";
 if(file_exists($picf)){
@@ -470,7 +535,7 @@ $pdf->Cell(0,5,utf8_decode('3. DECLARACION FAMILIAR'));
 $pdf->Ln(7);
 $pdf->MultiCell(196,5,utf8_decode('a. Declaro que he entendido y acatado lo anterior expuesto, sin embargo, doy pleno consentimiento.
 b. Acudiente o familiar: '.$nombreu.' '.$apellidou),1);
-$pdf->Ln(20);
+$pdf->Ln(4);
 //firmas
 $picf = "firmas/$docu.png";
 if(file_exists($picf)){
@@ -492,7 +557,7 @@ $pdf->Cell(10,10);
 }
 $pdf->Cell(50,10,utf8_decode('PARENTESCO: '.$parentescou));
 $pdf->Cell(65,10,utf8_decode('No C.C'.' '.$docu.' de '.$expedidou));
-$pdf->Ln(20);
+$pdf->Ln(15);
 $pdf->Cell(60);
 $pdf->SetFont('Arial','B',12);
 $pdf->Cell(0,5,utf8_decode('CONSENTIMIENTO INFORMADO'));
@@ -504,15 +569,15 @@ $pdf->Ln(7);
 $pdf->Cell(196,7,utf8_decode('Nombre del usuario: '.$nombrer.' '.$apellidosr),1,1,'C');
 $pdf->Cell(196,7,utf8_decode('Identificación: '.$tipodr.'      Numero: '.$cedular.'      Lugar de Expedición: '.$expedidor),1,1,'C');
 $pdf->MultiCell(196,5,utf8_decode('Nombre Técnico del tratamiento que se va a implementar al usuario: Proceso de Rehabilitación a través de Tratamiento psicoterapéutico y talleres de formación espiritual para prevenir el consumo y ayuda profesional para reinsertarse de nuevo a la sociedad.'),1);
-$pdf->Ln(7);
+$pdf->Ln(4);
 $pdf->Cell(65);
 $pdf->Cell(0,10,utf8_decode('5. DECLARACIÓN DEL USUARIO'));
 $pdf->Ln(7);
-$pdf->MultiCell(196,5,utf8_decode('a. Me han explicado y he comprendido satisfactoriamente la naturaleza y el propósito del tratamiento ofrecido por la institución incluyendo las restricciones establecidas durante el proceso, reglamento interno riesgos y beneficios, así como alternativas de otros tratamientos. Soy consciente de que no existen garantías absolutas Del resultado Del tratamiento ya que depende de mí con la fuerza de voluntad y empeño que coloque en el tratamiento. Con la posibilidad de poderlo revocar cualquier momento.
-b. Doy mi consentimiento para que se implemente el tratamiento descrito anteriormente y los procedimientos complementarios que sean necesarios y/o convenientes durante la ejecución del mismo a juicio de las personas que lo llevan a cabo.
-c. En cualquier caso deseo que se me respeten mis derechos humanos y mis derechos como usuario, convicciones y la confidencialidad de la información que proporcione.
-d. De aceptar algunos de estos puntos hágase constar: '),1);
-$pdf->Ln(30);
+$pdf->MultiCell(196,5,utf8_decode('a. Me ha sido explicada de manera clara, suficiente y comprensible la naturaleza, el propósito y los alcances del tratamiento terapéutico ofrecido por la institución, incluyendo las restricciones aplicables durante el proceso, el reglamento interno, los posibles riesgos y beneficios, así como las alternativas disponibles a dicho tratamiento. Reconozco que no existen garantías absolutas respecto al resultado final, ya que este dependerá en gran medida de mi compromiso, fuerza de voluntad y participación activa en el proceso. También he sido informado de que tengo el derecho a revocar este consentimiento en cualquier momento, sin que ello implique sanciones o represalias, salvo las consecuencias naturales del retiro.
+b. Por lo tanto, autorizo y doy mi consentimiento libre, voluntario e informado para la implementación del tratamiento descrito, así como para la realización de los procedimientos complementarios que, a juicio del equipo interdisciplinario de la FUNDACIÓN JESÚS ES MI ROCA, resulten necesarios o convenientes en el marco de mi atención integral.
+c. En todo momento solicito y exijo que se me respeten mis derechos humanos, mis derechos como usuario de servicios terapéuticos, mis convicciones personales y la confidencialidad de la información que entregue durante el proceso, conforme a lo establecido en la Constitución Política de Colombia, la Ley 23 de 1981, la Ley 1090 de 2006, la Ley 1566 de 2012 y la Ley 1751 de 2015 (Estatutaria de Salud).
+d. Si acepto de manera expresa cada uno de los puntos anteriores, dejo constancia con mi firma al final del presente documento.'),1);
+$pdf->Ln(20);
 //firmas
 $picf = "firmas/$docu.png";
 if(file_exists($picf)){
@@ -583,7 +648,7 @@ $pdf->Ln(20);
 $pdf->MultiCell(196,5,utf8_decode('b. Tutor legal o familiar.
 
 Sé que el usuario en mención; ha sido considerado incapaz de tomar por sí mismo la decisión de aceptar o rechazar el tratamiento descrito anteriormente. El orientador me ha explicado de forma satisfactoria que es, como se hace y para qué sirve el tratamiento.  También me ha explicado sus riesgos y beneficios. He comprendido lo anterior perfectamente y por ello doy mi consentimiento para que el equipo de profesionales implemente el tratamiento bajo la asesoría del cuerpo administrativo de la FUNDACIÓN JESÚS ES MI ROCA.
- 
+
 c. Así mismo la afiliación a salud, gastos médicos, traslado a centros asistenciales, medicamentos y demás tratamientos en cuestión de salud, los gastos de los mismos correrán por cuenta del tutor legal o familiar. 
 
 d. Dicha documentación debe ser autenticada ante la respectiva notaria local para su legalidad.
